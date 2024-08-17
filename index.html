@@ -3,51 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        .timer {
-            font-size: 2em;
-        }
-    </style>
+    <title>BEATPOT 2024 TIMER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DSEG7+Classic:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Countdown to 2024-08-18 12:00 PM</h1>
-    <div class="timer">
-        <span id="days">0</span> Days 
-        <span id="hours">0</span> Hours 
-        <span id="minutes">0</span> Minutes 
-        <span id="seconds">0</span> Seconds
+    <h1>BEATPOT 2024 SUMMER COUNTDOWN</h1>
+    <div class="timer" id="timer">
+        0:00:00:00.000
     </div>
 
-    <script>
-        function updateCountdown() {
-            const targetDate = new Date('2024-08-18T12:00:00');
-            const now = new Date();
-            const difference = targetDate - now;
-
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-
-            if (difference < 0) {
-                clearInterval(interval);
-                document.querySelector('.timer').textContent = "The event has started!";
-            }
-        }
-
-        const interval = setInterval(updateCountdown, 1000);
-        updateCountdown(); // 초기 호출
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
